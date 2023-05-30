@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/vista1', function () {
-    return view('Vista1');
-});
+// Route::get('/vista1', function () {
+//     return view('Vista1');
+// });
 
 Route::get('/index', function () {
-    return view('index');
+    return view('dashboard');
 });
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
