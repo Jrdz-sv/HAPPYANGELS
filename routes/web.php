@@ -14,17 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Login form route
 Route::get('/', function () {
-    return view('welcome');
+    return view('/auth/login');
 });
 
-Route::get('/vista1', function () {
-    return view('Vista1');
-});
 
-Route::get('/index', function () {
-    return view('index');
-});
+// Route::get('/index', function () {
+//     return view('index');
+// });
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

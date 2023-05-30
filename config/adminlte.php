@@ -63,8 +63,8 @@ return [
     |
     */
 
-    'logo' => '<b>Dashboard</b>',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>HappyAngels</b>',
+    'logo_img' => 'vendor/adminlte/dist/img/school.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -86,7 +86,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/school.png',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -109,7 +109,7 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/school.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -187,14 +187,14 @@ return [
     */
 
     'classes_body' => '',
-    'classes_brand' => '',
+    'classes_brand' => 'bg-info',
     'classes_brand_text' => '',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
     'classes_sidebar' => 'sidebar-dark-primary elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
+    'classes_topnav' => 'navbar-dark navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
@@ -294,7 +294,7 @@ return [
         [
             'type'         => 'navbar-search',
             'text'         => 'search',
-            'topnav_right' => true,
+            'topnav_right' => false,
         ],
         [
             'type'         => 'fullscreen-widget',
@@ -302,68 +302,104 @@ return [
         ],
 
         // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
+        // [
+        //     'type' => 'sidebar-menu-search',
+        //     'text' => 'search',
+        // ],
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+        // [
+        //     'text'        => 'pages',
+        //     'url'         => 'admin/pages',
+        //     'icon'        => 'far fa-fw fa-file',
+        //     'label'       => 4,
+        //     'label_color' => 'success',
+        // ],
+        ['header' => 'Administración'],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
+            'text' => 'Alumno',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'level_one',
+                    'text' => 'Tareas',
                     'url'  => '#',
                 ],
                 [
-                    'text'    => 'level_one',
+                    'text' => 'Notas',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Cursos',
+                    'url'  => '#',
+                ],
+            ]
+        ],
+        [
+            'text' => 'Profesor',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text' => 'Alumno',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Calificaciones',
+                    'url'  => '#',
+                ],
+                [
+                    'text'    => 'Grupos',
                     'url'     => '#',
                     'submenu' => [
                         [
-                            'text' => 'level_two',
+                            'text' => 'Grupo # 1',
                             'url'  => '#',
                         ],
                         [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
+                            'text' => 'Grupo # 2',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text' => 'Grupo # 3',
+                            'url'  => '#',
                         ],
                     ],
                 ],
+            ]
+        ],
+        [
+            'text'    => 'Registros',
+            'icon'    => 'fas fa-fw fa-file',
+            'submenu' => [
                 [
-                    'text' => 'level_one',
+                    'text' => 'Inscripción',
                     'url'  => '#',
+                ],
+                [
+                    'text' => 'Cursos',
+                    'url'  => '#',
+                ],
+                [
+                    'text'    => 'Grupos',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'Grupo # 1',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text' => 'Grupo # 2',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text' => 'Grupo # 3',
+                            'url'  => '#',
+                        ],
+                    ],
                 ],
             ],
         ],
