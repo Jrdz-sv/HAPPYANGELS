@@ -18,14 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/vista1', function () {
-//     return view('Vista1');
-// });
-
-Route::get('/index', function () {
-    return view('dashboard');
+Route::get('/vista1', function () {
+    return view('Vista1');
 });
 
+Route::get('/index', function () {
+    return view('index');
+});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
