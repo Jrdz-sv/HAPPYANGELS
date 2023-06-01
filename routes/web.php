@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 // Login form route
 Route::get('/', function () {
-    return view('/auth/login');
+    return view('auth.login');
 });
 
 
@@ -26,3 +26,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route for cursos in registros
+Route::get('/registro/curso', [App\Http\Controllers\HomeController::class, 'curso'])->name('/registro/curso');
+
+// Route::get('/', function () {
+//     return view('/registro/curso');
+// });

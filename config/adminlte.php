@@ -306,11 +306,11 @@ return [
         //     'type' => 'sidebar-menu-search',
         //     'text' => 'search',
         // ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
+        // [
+        //     'text' => 'blog',
+        //     'url'  => 'admin/blog',
+        //     'can'  => 'manage-blog',
+        // ],
         // [
         //     'text'        => 'pages',
         //     'url'         => 'admin/pages',
@@ -321,7 +321,7 @@ return [
         ['header' => 'Administración'],
         [
             'text' => 'Alumno',
-            'url'  => 'admin/settings',
+            'url'  => '#',
             'icon' => 'fas fa-fw fa-user',
             'submenu' => [
                 [
@@ -333,22 +333,22 @@ return [
                     'url'  => '#',
                 ],
                 [
-                    'text' => 'Cursos',
+                    'text' => 'Curso',
                     'url'  => '#',
                 ],
             ]
         ],
         [
             'text' => 'Profesor',
-            'url'  => 'admin/settings',
+            'url'  => '#',
             'icon' => 'fas fa-fw fa-user',
             'submenu' => [
                 [
-                    'text' => 'Alumno',
+                    'text' => 'Alumnos',
                     'url'  => '#',
                 ],
                 [
-                    'text' => 'Calificaciones',
+                    'text' => 'Cursos',
                     'url'  => '#',
                 ],
                 [
@@ -381,7 +381,7 @@ return [
                 ],
                 [
                     'text' => 'Cursos',
-                    'url'  => '#',
+                    'url'  => 'registro/curso',
                 ],
                 [
                     'text'    => 'Grupos',

@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
         return view('dashboard');
     }
+
+    public function curso()
+    {
+        return view('/registro/curso');
+    }
 }
