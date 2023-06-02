@@ -27,11 +27,15 @@ class HomeController extends Controller
         return view('dashboard');
     }
 
-    // Cursos in registros
-    public function curso_registro()
+// -------------------------------------------
+
+    // Cursos in estudiante
+    public function curso_estudiante()
     {
-        return view('/registro/curso');
+        return view('/estudiante/curso');
     }
+
+// -------------------------------------------
 
     // Cursos in profesor
     public function curso_profesor()
@@ -39,10 +43,36 @@ class HomeController extends Controller
         return view('/profesor/curso');
     }
 
-    // Cursos in estudiante
-    public function curso_estudiante()
+    // Grupos in profesor
+    public function grupo_profesor()
     {
-        return view('/estudiante/curso');
+        return view('/profesor/grupo');
+    }
+    
+    // Estudiante in profesor
+    public function estudiante_profesor()
+    {
+        return view('/profesor/estudiante');
+    }
+
+// -------------------------------------------
+
+    // Cursos in registros
+    public function curso_registro()
+    {
+        return view('/registro/curso');
+    }
+
+    // Grupos in registros
+    public function grupo_registro()
+    {
+        return view('/registro/grupo');
+    }
+
+    // Inscripcion in registros
+    public function inscripcion_registro()
+    {
+        return view('/registro/inscripcion');
     }
     
 }

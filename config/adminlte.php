@@ -321,7 +321,7 @@ return [
         ['header' => 'Administración'],
         // Dropdown Alumnno
         [
-            'text' => 'Alumno',
+            'text' => 'Estudiante',
             'url'  => '#',
             'icon' => 'fas fa-fw fa-user',
             'submenu' => [
@@ -335,7 +335,7 @@ return [
                 ],
                 [
                     'text' => 'Curso',
-                    'url'  => '#',
+                    'url'  => 'estudiante/curso',
                 ],
             ]
         ],
@@ -347,15 +347,15 @@ return [
             'submenu' => [
                 [
                     'text' => 'Alumnos',
-                    'url'  => '#',
+                    'url'  => 'profesor/estudiante',
                 ],
                 [
                     'text' => 'Cursos',
-                    'url'  => '#',
+                    'url'  => 'profesor/curso',
                 ],
                 [
                     'text' => 'Grupos',
-                    'url'  => '#',
+                    'url'  => 'profesor/grupo',
                 ],
             ]
         ],
@@ -366,7 +366,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Inscripción',
-                    'url'  => '#',
+                    'url'  => 'registro/inscripcion',
                 ],
                 [
                     'text' => 'Cursos',
@@ -374,7 +374,7 @@ return [
                 ],
                 [
                     'text' => 'Grupos',
-                    'url'  => '#',
+                    'url'  => 'registro/grupo',
                 ],
             ],
         ],
