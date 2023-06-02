@@ -31,11 +31,11 @@ Route::get('/estudiante/curso', [App\Http\Controllers\HomeController::class, 'cu
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Route for estudiante in profesor
-Route::get('/profesor/estudiante', [App\Http\Controllers\HomeController::class, 'grupo_profesor'])->name('/profesor/estudiante');
+Route::get('/profesor/estudiante', [App\Http\Controllers\HomeController::class, 'estudiante_profesor'])->name('/profesor/estudiante');
 // Route for cursos in profesor
 Route::get('/profesor/curso', [App\Http\Controllers\HomeController::class, 'curso_profesor'])->name('/profesor/curso');
 // Route for grupos in profesor
-Route::get('/profesor/grupo', [App\Http\Controllers\HomeController::class, 'estudiante_profesor'])->name('/profesor/grupo');
+Route::get('/profesor/grupo', [App\Http\Controllers\HomeController::class, 'grupo_profesor'])->name('/profesor/grupo');
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Route for inscripcion in registros

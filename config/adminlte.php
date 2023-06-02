@@ -346,7 +346,7 @@ return [
             'icon' => 'fas fa-fw fa-user',
             'submenu' => [
                 [
-                    'text' => 'Alumnos',
+                    'text' => 'Estudiantes',
                     'url'  => 'profesor/estudiante',
                 ],
                 [
