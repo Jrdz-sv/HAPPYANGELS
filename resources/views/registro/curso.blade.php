@@ -1,14 +1,14 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Curso')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Curso</h1>
 @stop
 
 @section('content')
 
-    <h1>Welcome to cursos</h1>
+    <h1>Welcome to Cursos.</h1>
 
 @stop
 
@@ -16,6 +16,4 @@
     <link rel="stylesheet" href="/css/admin_custom.css">
 @stop
 
-@section('js')
-    <script> console.log('Hi!'); </script>
-@stop
+<script src="{{ asset('js/custom.js') }}"></script>

@@ -319,6 +319,7 @@ return [
         //     'label_color' => 'success',
         // ],
         ['header' => 'Administración'],
+        // Dropdown Alumnno
         [
             'text' => 'Alumno',
             'url'  => '#',
@@ -338,6 +339,7 @@ return [
                 ],
             ]
         ],
+        // Dropdown Profesor
         [
             'text' => 'Profesor',
             'url'  => '#',
@@ -352,25 +354,12 @@ return [
                     'url'  => '#',
                 ],
                 [
-                    'text'    => 'Grupos',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Grupo # 1',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text' => 'Grupo # 2',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text' => 'Grupo # 3',
-                            'url'  => '#',
-                        ],
-                    ],
+                    'text' => 'Grupos',
+                    'url'  => '#',
                 ],
             ]
         ],
+        // Dropdown Registro
         [
             'text'    => 'Registros',
             'icon'    => 'fas fa-fw fa-file',
@@ -384,25 +373,12 @@ return [
                     'url'  => 'registro/curso',
                 ],
                 [
-                    'text'    => 'Grupos',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Grupo # 1',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text' => 'Grupo # 2',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text' => 'Grupo # 3',
-                            'url'  => '#',
-                        ],
-                    ],
+                    'text' => 'Grupos',
+                    'url'  => '#',
                 ],
             ],
         ],
+        // Tags
         ['header' => 'labels'],
         [
             'text'       => 'important',

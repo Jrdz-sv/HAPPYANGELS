@@ -21,13 +21,28 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    // Dashoboard
     public function index()
     {
         return view('dashboard');
     }
 
-    public function curso()
+    // Cursos in registros
+    public function curso_registro()
     {
         return view('/registro/curso');
     }
+
+    // Cursos in profesor
+    public function curso_profesor()
+    {
+        return view('/profesor/curso');
+    }
+
+    // Cursos in estudiante
+    public function curso_estudiante()
+    {
+        return view('/estudiante/curso');
+    }
+    
 }

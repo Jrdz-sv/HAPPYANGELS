@@ -28,7 +28,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Route for cursos in registros
-Route::get('/registro/curso', [App\Http\Controllers\HomeController::class, 'curso'])->name('/registro/curso');
+Route::get('/registro/curso', [App\Http\Controllers\HomeController::class, 'curso_registro'])->name('/registro/curso');
 
 // Route::get('/', function () {
 //     return view('/registro/curso');
