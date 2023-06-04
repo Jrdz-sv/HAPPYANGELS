@@ -64,7 +64,11 @@ class CursoController extends Controller
      */
     public function edit(Curso $curso)
     {
-        //
+        //Get Cursos
+        // $cursos = Curso::all();
+
+        // show views
+        return view ('registro/curso/update')->with(['curso', $curso]);
     }
 
     /**
@@ -72,14 +76,33 @@ class CursoController extends Controller
      */
     public function update(Request $request, Curso $curso)
     {
-        //
+        // validate fields
+        $data = request()->validate([
+            'codigo'=>'required',
+            'nombre'=>'required'
+        ]);
+
+        // remplazar old data for new data
+        $curso->codigo = $data['codigo'];
+        $curso->nombre = $data['nombre'];
+        $curso->updated_at = now();
+
+        //Save update
+        $curso->save();
+
+        // Redirect data
+        return redirect('registro/curso/show');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Curso $curso)
+    public function destroy(Curso $id)
     {
-        //
+        //deleting product with ID 
+        Curso::destroy($id);
+
+        //return a json answer
+        return response()->json(array('res'=> true));
     }
 }
