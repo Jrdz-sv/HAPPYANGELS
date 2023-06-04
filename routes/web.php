@@ -22,7 +22,7 @@ Route::get('/', function () {
 // Auth
 Auth::routes();
 
-// Dashboard
+// Dashboard-Home
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -40,7 +40,19 @@ Route::get('/profesor/grupo', [App\Http\Controllers\HomeController::class, 'grup
 // ---------------------------------------------------------------------------------------------------------------------
 // Route for inscripcion in registros
 Route::get('/registro/inscripcion', [App\Http\Controllers\HomeController::class, 'inscripcion_registro'])->name('/registro/inscripcion');
-// Route for cursos in registros
-Route::get('/registro/curso', [App\Http\Controllers\HomeController::class, 'curso_registro'])->name('/registro/curso');
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+// Route for crud cursos in registros
+
+// show route
+Route::get('/registro/curso/show', [App\Http\Controllers\CursoController::class, 'index'])->name('/registro/curso/show');
+
+// show create
+Route::get('/registro/curso/create', [App\Http\Controllers\CursoController::class, 'create'])->name('/registro/curso/create');
+
+
+// ---------------------------------------------------------------------------------------------------------------------
 // Route for grupos in registros
 Route::get('/registro/grupo', [App\Http\Controllers\HomeController::class, 'grupo_registro'])->name('/registro/grupo');

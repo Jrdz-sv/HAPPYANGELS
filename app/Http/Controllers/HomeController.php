@@ -57,11 +57,11 @@ class HomeController extends Controller
 
 // -------------------------------------------
 
-    // Cursos in registros
-    public function curso_registro()
-    {
-        return view('/registro/curso');
-    }
+    // // Cursos in registros
+    // public function curso_registro()
+    // {
+    //     return view('/registro/curso/show');
+    // }
 
     // Grupos in registros
     public function grupo_registro()

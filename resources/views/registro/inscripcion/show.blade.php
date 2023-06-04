@@ -13,7 +13,7 @@
 <hr>
 {{-- Boton para ir al formulario de agregar producto --}}
 <br>
-<a class="btn btn-success btn-sm" href="/products/create">Agregar nuevo cursos</a>
+<a class="btn btn-success btn-sm" href="/registro/curso/create">Agregar nuevo cursos</a>
 <br>
 <br>
 <table class="container table table-hover table-bordered mt-2">
@@ -41,15 +41,7 @@
 </table>
 @endsection
 
-@section('scripts')
-{{-- SweetAlert --}}
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-{{-- JS --}}
-<script src="{{asset('js/product.js')}}"></script>
-@endsection
-
-@stop
-
+{{-- CSS & JS --}}
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
 @stop

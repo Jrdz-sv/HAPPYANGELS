@@ -16,15 +16,19 @@ class CursoController extends Controller
         $cursos = Curso::all();
 
         // Pass the cursos to the view
-        return view('cursos.index', compact('cursos'));
+        return view('registro/curso/show', compact('cursos'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        //
+    {   
+        //Get Cursos
+        $cursos = Curso::all();
+
+        //return view for create form
+        return view ('registro/curso/create')->with(['cursos'=>$cursos]);
     }
 
     /**
@@ -32,7 +36,19 @@ class CursoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->post());
+
+        // validate fields
+        $data = request()->validate([
+            'codigo'=>'required',
+            'nombre'=>'required'
+        ]);
+
+        // Insert information
+        Curso::create($data);
+
+        // Redirect information(when not using view we have to use redirct for saving data)
+        return redirect('registro/curso/show');
     }
 
     /**

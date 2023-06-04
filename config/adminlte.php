@@ -1,5 +1,5 @@
 <?php
-
+// Any change run on terminal php artisan config:cache
 return [
 
     /*
@@ -370,7 +370,7 @@ return [
                 ],
                 [
                     'text' => 'Cursos',
-                    'url'  => 'registro/curso',
+                    'url'  => '/registro/curso/show',
                 ],
                 [
                     'text' => 'Grupos',
