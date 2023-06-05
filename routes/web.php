@@ -47,23 +47,23 @@ Route::get('/registro/inscripcion', [App\Http\Controllers\HomeController::class,
 // Route for crud cursos in registros
 
 // show route
-Route::get('/registro/curso/show', [App\Http\Controllers\CursoController::class, 'index'])->name('/registro/curso/show');
+Route::get('/registro/curso/show', [App\Http\Controllers\CursoController::class, 'index']);
 
 // create route
-Route::get('/registro/curso/create', [App\Http\Controllers\CursoController::class, 'create'])->name('/registro/curso/create');
+Route::get('/registro/curso/create', [App\Http\Controllers\CursoController::class, 'create']);
 
 // store route
-Route::post('/registro/curso/store', [App\Http\Controllers\CursoController::class, 'store'])->name('/registro/curso/store');
+Route::post('/registro/curso/store', [App\Http\Controllers\CursoController::class, 'store']);
 
 // edit route
-Route::get('/registro/curso/edit/{curso}', [App\Http\Controllers\CursoController::class, 'edit'])->name('/registro/curso/edit');
+Route::get('/registro/curso/edit/{curso}', [App\Http\Controllers\CursoController::class, 'edit']);
 
 // update route
-Route::put('/registro/curso/update/{curso}', [App\Http\Controllers\CursoController::class, 'update'])->name('/registro/curso/update');
+Route::put('/registro/curso/update/{curso}', [App\Http\Controllers\CursoController::class, 'update']);
 
 // delete route
-Route::delete('/registro/curso/delete/{id}', [App\Http\Controllers\CursoController::class, 'destroy'])->name('/registro/curso/delete');
+Route::delete('/registro/curso/destroy/{id}', [App\Http\Controllers\CursoController::class, 'destroy']);
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Route for grupos in registros
-Route::get('/registro/grupo', [App\Http\Controllers\HomeController::class, 'grupo_registro'])->name('/registro/grupo');
+// Route::get('/registro/grupo', [App\Http\Controllers\HomeController::class, 'grupo_registro'])->name('/registro/grupo');
