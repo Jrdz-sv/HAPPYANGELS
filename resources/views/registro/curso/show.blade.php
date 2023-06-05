@@ -13,7 +13,7 @@
 <hr>
 {{-- Boton para ir al formulario de agregar cursos --}}
 <br>
-<a class="btn btn-success btn-sm" href="{{ route('registro.curso.create')}}">Agregar nuevo cursos</a>
+<a class="btn btn-success btn-sm" href="/registro/curso/create/">Agregar nuevo cursos</a>
 <br>
 <br>
 <table class="container table table-hover table-bordered mt-2">
@@ -32,7 +32,7 @@
         <td>{{$item->nombre}}</td>
         <td>
             {{-- boton para modificar --}}
-            <a class="btn btn-primary btn-sm" href="{{ route('registro.curso.edit', $item->codigo) }}">Modificar</a>
+            <a class="btn btn-primary btn-sm" href="/registro/curso/edit/{{$item->codigo}}">Modificar</a>
             {{-- boton para eliminar --}}
             <button class="btn btn-danger btn-sm" url="/registro/curso/destroy/{{$item->codigo}}" onclick="destroy(this)" token="{{csrf_token()}}">Eliminar</button>
         </td>
@@ -51,4 +51,3 @@
     <script src="{{asset('js/product.js')}}"></script>
 @stop
 
-<script src="{{ asset('js/custom.js') }}"></script>
