@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CursoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,7 +48,7 @@ Route::get('/registro/inscripcion', [App\Http\Controllers\HomeController::class,
 // Route for crud cursos in registros
 
 // show route
-Route::get('/registro/curso/show', [App\Http\Controllers\CursoController::class, 'index']);
+Route::get('/registro/curso/show', [CursoController::class, 'index']);
 
 // create route
 Route::get('/registro/curso/create', [App\Http\Controllers\CursoController::class, 'create']);

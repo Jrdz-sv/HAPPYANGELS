@@ -11,13 +11,13 @@
 <h5 class="text-center">Formulario para actualizar cursos</h5>
 <hr>
 <div class="container">
-<form action="/registro/curso/update/{{$curso->codigo}}" method="POST">
+<form action="/registro/curso/update/{{$course->idCurso}}" method="POST">
     @csrf
     @method('PUT')
     <div class="row row col-6 m-auto">
         <div class="col-6">
             Nombre
-            <input type="text" class="form-control" name="nombre" value="{{$curso->nombre}}">
+            <input type="text" class="form-control" name="nombre" value="{{$course->nombre}}">
             @error('nombre')
             <span class="invalid-feedback d-block" role="alert">
                 <strong>{{$message}}</strong>
@@ -26,7 +26,7 @@
         </div>
         <div class="col-6">
             Codigo
-            <input type="text" class="form-control" name="codigo" value="{{$curso->codigo}}">
+            <input type="text" class="form-control" name="codigo" value="{{$course->codigo}}">
             @error('codigo')
             <span class="invalid-feedback d-block" role="alert">
                 <strong>{{$message}}</strong>

@@ -68,7 +68,7 @@ class CursoController extends Controller
         $cursos = Curso::all();
 
         // show views
-        return view ('registro/curso/update', compact('cursos'));
+        return view ('registro/curso/update')->with(['course' => $curso]);
     }
 
     /**
@@ -102,7 +102,7 @@ class CursoController extends Controller
         //deleting product with ID 
         Curso::destroy($id);
 
-        //return a json answer
-        // return response()->json(array('res'=> true));
+        // return a json answer
+        return response()->json(array('res'=> true));
     }
 }

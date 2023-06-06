@@ -19,6 +19,7 @@
 <table class="container table table-hover table-bordered mt-2">
     {{-- Encabezados --}}
     <tr class="table-info">
+        <td>ID</td>
         <td>C&oacute;digo</td>
         <td>Nombre</td>
         <td>Acciones</td>
@@ -28,13 +29,14 @@
     @foreach ($cursos as $item)
 
     <tr>
+        <td>{{$item->idCurso}}</td>
         <td>{{$item->codigo}}</td>  
         <td>{{$item->nombre}}</td>
         <td>
             {{-- boton para modificar --}}
-            <a class="btn btn-primary btn-sm" href="/registro/curso/edit/{{$item->codigo}}">Modificar</a>
+            <a class="btn btn-primary btn-sm" href="/registro/curso/edit/{{$item->idCurso}}">Modificar</a>
             {{-- boton para eliminar --}}
-            <button class="btn btn-danger btn-sm" url="/registro/curso/destroy/{{$item->codigo}}" onclick="destroy(this)" token="{{csrf_token()}}">Eliminar</button>
+            <button class="btn btn-danger btn-sm" url="/registro/curso/destroy/{{$item->idCurso}}" onclick="destroy(this)" token="{{csrf_token()}}">Eliminar</button>
         </td>
     </tr>
     

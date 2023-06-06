@@ -9,6 +9,6 @@ class Curso extends Model
 {
     use HasFactory;
     protected $table = "cursos"; 
-    protected $primaryKey = "id"; 
+    protected $primaryKey = "idCurso"; 
     protected $fillable = ["codigo", "nombre"];
 }
