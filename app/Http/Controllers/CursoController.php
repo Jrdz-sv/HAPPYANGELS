@@ -97,12 +97,14 @@ class CursoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy($idCurso)
     {
-        //deleting product with ID 
-        Curso::destroy($id);
+        $curso = Curso::findOrFail($idCurso);
+
+        //deleting Curso
+        $curso->delete();
 
         // return a json answer
-        return response()->json(array('res'=> true));
+        return redirect('registro/curso/show')->with('success', 'El curso se ha Eliminado exitosamente.');
     }
 }

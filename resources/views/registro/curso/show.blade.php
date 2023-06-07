@@ -33,10 +33,14 @@
         <td>{{$item->codigo}}</td>  
         <td>{{$item->nombre}}</td>
         <td>
-            {{-- boton para modificar --}}
-            <a class="btn btn-primary btn-sm" href="/registro/curso/edit/{{$item->idCurso}}">Modificar</a>
-            {{-- boton para eliminar --}}
-            <button class="btn btn-danger btn-sm" url="/registro/curso/destroy/{{$item->idCurso}}" onclick="destroy(this)" token="{{csrf_token()}}">Eliminar</button>
+            <form action="/registro/curso/destroy/{{$item->idCurso}}" method="POST">
+                {{-- boton para modificar --}}
+                <a class="btn btn-primary btn-sm" href="/registro/curso/edit/{{$item->idCurso}}">Modificar</a>
+                @csrf
+                @method('DELETE')
+                {{-- boton para eliminar --}}
+                <button type="submit" class="btn btn-danger btn-sm" onclick="destroy($item->idCurso)">Eliminar</button>
+            </form>
         </td>
     </tr>
     
