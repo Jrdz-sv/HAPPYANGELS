@@ -99,7 +99,8 @@ class CursoController extends Controller
      */
     public function destroy($idCurso)
     {
-        $curso = Curso::findOrFail($idCurso);
+        // Get idCurso a borrar
+        $curso = Curso::find($idCurso);
 
         //deleting Curso
         $curso->delete();

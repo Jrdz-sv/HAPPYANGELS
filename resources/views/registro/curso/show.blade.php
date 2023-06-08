@@ -3,27 +3,27 @@
 @section('title', 'Curso')
 
 @section('content_header')
-    <h1>Curso</h1>
+    {{-- <h1>Curso</h1> --}}
 @stop
 
 @section('content')
 
 <h1 class="text-center">Cursos</h1>
-<h5 class="text-center">Listado de Cursos</h5>
+{{-- <h5 class="text-center">Listado de Cursos</h5> --}}
 <hr>
 {{-- Boton para ir al formulario de agregar cursos --}}
 <br>
 <a class="btn btn-success btn-sm" href="/registro/curso/create/">Agregar nuevo cursos</a>
 <br>
 <br>
-<table class="container table table-hover table-bordered mt-2">
+<table class="container table">
     {{-- Encabezados --}}
-    <tr class="table-info">
+    <thead class="table-dark">
         <td>ID</td>
         <td>C&oacute;digo</td>
         <td>Nombre</td>
         <td>Acciones</td>
-    </tr>
+    </thead>
 
     {{-- Listado de curso --}}
     @foreach ($cursos as $item)

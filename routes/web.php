@@ -40,7 +40,7 @@ Route::get('/profesor/grupo', [App\Http\Controllers\HomeController::class, 'grup
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Route for inscripcion in registros
-Route::get('/registro/inscripcion', [App\Http\Controllers\HomeController::class, 'inscripcion_registro'])->name('/registro/inscripcion');
+Route::get('/registro/curso/show', [App\Http\Controllers\CursoController::class, 'index']);
 
 
 // ---------------------------------------------------------------------------------------------------------------------
