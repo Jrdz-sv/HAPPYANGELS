@@ -8,7 +8,7 @@
 
 @section('content')
 
-    <h1>Welcome to this beautiful admin panel.</h1>
+    <h1>Welcome to this beautiful admin Mario panel.</h1>
 
 @stop
 
