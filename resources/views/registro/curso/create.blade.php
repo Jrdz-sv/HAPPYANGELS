@@ -58,9 +58,4 @@
 </div>
 @endsection
 
-{{-- CSS & JS --}}
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
 
-<script src="{{ asset('js/custom.js') }}"></script>
