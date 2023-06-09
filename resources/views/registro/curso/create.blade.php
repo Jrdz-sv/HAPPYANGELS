@@ -3,7 +3,7 @@
 @section('title', 'Curso')
 
 @section('content_header')
-    <h1>Curso</h1>
+    {{-- <h1>Curso</h1> --}}
 @stop
 
 @section('content')
@@ -37,21 +37,18 @@
             </span>
             @enderror
         </div>
-        {{-- <div class="col-12">
-            Curso
-            <select name="curso" class="form-control">
-                @foreach($cursos as $item)
-                <option value="{{$item->codigo}}">{{$item->nombre}}</option>
-                @endforeach
-            </select>
-            @error('curso')
-            <span class="invalid-feedback d-block" role="alert">
-                <strong>{{$message}}</strong>
-            </span>
-            @enderror
-        </div> --}}
+
         <div class="col-12 mt-2">
-            <button class="btn btn-primary">Guardar</button>
+            <div class="row justify-content-center text-center">
+                <div class="col-6">
+                    {{-- Botón Regresar --}}
+                    <a href="/registro/curso/show" class="btn btn-danger btn-lg">Cancelar</a>
+                </div>
+                <div class="col-6">
+                    {{-- Botón Guardar --}}
+                    <button class="btn btn-primary btn-lg">Guardar</button>
+                </div>
+            </div>
         </div>
     </div>
     </form>
