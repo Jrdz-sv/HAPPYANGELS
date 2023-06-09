@@ -12,15 +12,16 @@
 <hr>
 <div class="container">
 <form action="/registro/curso/update/{{$course->idCurso}}" method="POST">
-        @csrf
-        @method('PUT')
-    <div class="row row col-6 m-auto">
-        <!-- Agrega SweetAlert2 CDN -->
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @csrf
+    @method('PUT')
+    <!-- Agrega SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-        <form action="/ruta-de-guardado" method="POST">
-            <div class="col-6">
-                Nombre
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <!-- Nombre -->
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
                 <input type="text" class="form-control" name="nombre" value="{{$course->nombre}}">
                 @error('nombre')
                 <span class="invalid-feedback d-block" role="alert">
@@ -28,29 +29,34 @@
                 </span>
                 @enderror
             </div>
-            <div class="col-6">
-                Codigo
-                <input type="text" class="form-control" name="codigo" value="{{$course->codigo}}"><br>
+        </div>
+        <div class="col-6">
+            <!-- Codigo -->
+            <div class="form-group">
+                <label for="codigo">Codigo</label>
+                <input type="text" class="form-control" name="codigo" value="{{$course->codigo}}">
                 @error('codigo')
                 <span class="invalid-feedback d-block" role="alert">
                     <strong>{{$message}}</strong>
                 </span>
                 @enderror
             </div>
-            <div class="col-12 mt-2">
-                <div class="row justify-content-center text-center">
-                    <div class="col-6">
-                        {{-- Botón Regresar --}}
-                        <a href="/registro/curso/show" class="btn btn-danger btn-lg">Cancelar</a>
-                    </div>
-                    <div class="col-6">
-                    {{-- Guardar Button --}}
+        </div>
+        <div class="col-12 mt-2">
+            <div class="row justify-content-center text-center">
+                <div class="col-6">
+                    <!-- Botón Regresar -->
+                    <a href="/registro/curso/show" class="btn btn-danger btn-lg">Cancelar</a>
+                </div>
+                <div class="col-6">
+                    <!-- Guardar Button -->
                     <button type="button" class="btn btn-primary btn-lg" onclick="confirmSave()">Guardar</button>
                 </div>
             </div>
+        </div>
     </div>
 </form>
-        
+    
 <script>
     function confirmSave() {
         Swal.fire({
