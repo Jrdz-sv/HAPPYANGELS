@@ -381,9 +381,9 @@ return [
         // Tags
         ['header' => 'labels'],
         [
-            'text'       => 'important',
+            'text'       => 'Catalogo',
             'icon_color' => 'red',
-            'url'        => '#',
+            'url'        => '/dashboard',
         ],
         [
             'text'       => 'warning',

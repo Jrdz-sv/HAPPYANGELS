@@ -108,4 +108,12 @@ class CursoController extends Controller
         // return a json answer
         return redirect('registro/curso/show')->with('success', 'El curso se ha Eliminado exitosamente.');
     }
+
+
+    public function conocenos()
+    {
+        return view('info/conocenos');
+    }
+
+
 }
