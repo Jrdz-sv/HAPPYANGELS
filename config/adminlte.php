@@ -381,9 +381,9 @@ return [
         // Tags
         ['header' => 'labels'],
         [
-            'text'       => 'Catalogo',
+            'text'       => 'Conocenos',
             'icon_color' => 'red',
-            'url'        => '/dashboard',
+            'url'        => '/info/conocenos',
         ],
         [
             'text'       => 'warning',
