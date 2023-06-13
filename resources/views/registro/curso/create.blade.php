@@ -19,6 +19,15 @@
         @csrf
     <div class="row col-6 m-auto">
         <div class="col-6">
+            Nombre de curso
+            <input type="text" class="form-control" name="nombre">
+            @error('nombre')
+            <span class="invalid-feedback d-block" role="alert">
+                <strong>{{$message}}</strong>
+            </span>
+            @enderror
+        </div>
+        <div class="col-6">
             Codigo de curso
             <input type="text" class="form-control" name="codigo">
             {{-- error expection --}}
@@ -28,15 +37,7 @@
             </span>
             @enderror
         </div>
-        <div class="col-6">
-            Nombre de curso
-            <input type="text" class="form-control" name="nombre">
-            @error('nombre')
-            <span class="invalid-feedback d-block" role="alert">
-                <strong>{{$message}}</strong>
-            </span>
-            @enderror
-        </div>
+
 
         <div class="col-12 mt-2">
             <div class="row justify-content-center text-center">

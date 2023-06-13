@@ -11,7 +11,7 @@
 <h5 class="text-center">Formulario para actualizar cursos</h5>
 <hr>
 <div class="container">
-<form action="/registro/curso/update/{{$course->idCurso}}" method="POST">
+<form id="update-form" action="/registro/curso/update/{{$course->idCurso}}" method="POST">
     @csrf
     @method('PUT')
     <!-- Agrega SweetAlert2 CDN -->
@@ -56,7 +56,7 @@
         </div>
     </div>
 </form>
-    
+{{-- Uso de SweetAlert2 --}}
 <script>
     function confirmSave() {
         Swal.fire({
@@ -70,37 +70,13 @@
             cancelButtonText: 'Cancelar'
         }).then((result) => {
             if (result.isConfirmed) {
-                // Obtener los datos del formulario
-                var form = document.forms[0];
-                var formData = new FormData(form);
-
-                // Realizar la solicitud de actualización utilizando AJAX
-                var xhr = new XMLHttpRequest();
-                xhr.open('POST', form.action);
-                xhr.setRequestHeader('X-CSRF-TOKEN', '{{ csrf_token() }}');
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                        // Mostrar notificación de éxito
-                        Swal.fire(
-                            'Guardado',
-                            'Los cambios se han guardado exitosamente',
-                            'success'
-                        ).then(() => {
-                            // Redirect back to Show Cursos table
-                            window.location.href = '/registro/curso/show';
-                        });
-                    } else if (xhr.readyState === XMLHttpRequest.DONE && xhr.status !== 200) {
-                        // Mostrar notificación de error en caso de fallo en la solicitud
-                        Swal.fire(
-                            'Error',
-                            'No se pudo guardar los cambios',
-                            'error'
-                        );
-                    }
-                };
-                xhr.send(formData);
+                // Obtener el formulario
+                var form = document.getElementById('update-form');
+                
+                // Enviar el formulario
+                form.submit();
             } else if (result.dismiss === Swal.DismissReason.cancel || result.dismiss === Swal.DismissReason.backdrop) {
-                // Redirect back to current page
+                // Redirigir a la página actual
                 window.location.href = window.location.href;
             }
         });
