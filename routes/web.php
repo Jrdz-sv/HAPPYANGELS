@@ -65,6 +65,9 @@ Route::put('/registro/curso/update/{curso}', [App\Http\Controllers\CursoControll
 // delete route
 Route::delete('/registro/curso/destroy/{id}', [App\Http\Controllers\CursoController::class, 'destroy']);
 
+// show route
+Route::get('/info/conocenos', [CursoController::class, 'conocenos']);
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Route for grupos in registros
 // Route::get('/registro/grupo', [App\Http\Controllers\HomeController::class, 'grupo_registro'])->name('/registro/grupo');
