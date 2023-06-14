@@ -1,17 +1,17 @@
 @extends('adminlte::page')
 
-@section('title', 'Grupo')
+@section('title', 'Curso')
 
 @section('content_header')
     {{-- <h1>Curso</h1> --}}
 @stop
 
 @section('content')
-<h1 class="text-center">Grupos de: {{$curso["codigo"]}}</h1>
-<h5 class="text-center">Formulario para actualizar grupos</h5>
+<h1 class="text-center">Modificar</h1>
+<h5 class="text-center">Formulario para actualizar cursos</h5>
 <hr>
 <div class="container">
-<form id="update-form" action="/registro/grupo/update/{{$grupo["idGrupo"]}}" method="POST">
+<form id="update-form" action="/registro/estudiante/update/{{$estudiantes->idEstudiante}}" method="POST">
     @csrf
     @method('PUT')
     <!-- Agrega SweetAlert2 CDN -->
@@ -19,11 +19,11 @@
 
     <div class="row justify-content-center">
         <div class="col-6">
-            <!-- Codigo -->
+            <!-- Nombre -->
             <div class="form-group">
                 <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" name="codigo" value="{{$grupo->codigo}}">
-                @error('codigo')
+                <input type="text" class="form-control" name="nombre" value="{{$estudiantes->nombre}}">
+                @error('nombre')
                 <span class="invalid-feedback d-block" role="alert">
                     <strong>{{$message}}</strong>
                 </span>
@@ -31,12 +31,11 @@
             </div>
         </div>
         <div class="col-6">
-            <!-- Cursantes -->
+            <!-- Codigo -->
             <div class="form-group">
-                <label for="codigo">Cursantes</label>
-                <input type="text" class="form-control" name="" value="{{$grupo->cursantes}}" disabled>
-                <input type="text" class="form-control" name="cursantes" value="{{$grupo->cursantes}}" hidden>
-                @error('cursantes')
+                <label for="codigo">Codigo</label>
+                <input type="text" class="form-control" name="apellido" value="{{$estudiantes->apellido}}">
+                @error('codigo')
                 <span class="invalid-feedback d-block" role="alert">
                     <strong>{{$message}}</strong>
                 </span>
@@ -47,7 +46,7 @@
             <div class="row justify-content-center text-center">
                 <div class="col-6">
                     <!-- Botón Regresar -->
-                    <a href="/registro/grupo/show" class="btn btn-danger btn-lg">Cancelar</a>
+                    <a href="/registro/estudiante/show" class="btn btn-danger btn-lg">Cancelar</a>
                 </div>
                 <div class="col-6">
                     <!-- Guardar Button -->

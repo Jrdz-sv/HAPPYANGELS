@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Curso')
+@section('title', 'Estudiante')
 
 @section('content_header')
     {{-- <h1>Curso</h1> --}}
@@ -8,47 +8,44 @@
 
 @section('content')
 
-<h1 class="text-center">Cursos</h1>
+<h1 class="text-center">Estudiantes</h1>
 {{-- <h5 class="text-center">Listado de Cursos</h5> --}}
 <hr>
 {{-- Boton para ir al formulario de agregar cursos --}}
 <br>
-<a class="btn btn-success btn-lg" href="/registro/curso/create/">Agregar nuevo cursos</a>
+<a class="btn btn-success btn-lg" href="/registro/estudiante/create/">Agregar nuevo estudiante</a>
 <br>
 <br>
 <table class="container table">
     {{-- Encabezados --}}
     <thead class="table-dark">
 
-        <td>C&oacute;digo</td>
         <td>Nombre</td>
+        <td>Apellido</td>
         <td>Acciones</td>
         
     </thead>
 
     {{-- Listado de curso --}}
-    @foreach ($cursos as $item)
+    @foreach ($estudiantes as $item)
 
     <tr>
     {{-- <td>{{$item->idCurso}}</td> --}}
-    <td>{{$item->codigo}}</td>  
-    <td>{{$item->nombre}}</td>
+    <td>{{$item->nombre}}</td>  
+    <td>{{$item->apellido}}</td>
     <td>
-        <form action="/registro/curso/destroy/{{$item->idCurso}}" method="POST">
-
-            {{-- boton para administrar grupos --}}
-            <a class="btn btn-secondary" href="/registro/curso/grupo/show/{{$item->idCurso}}">Grupos</a>
-            
+        <form action="/registro/estudiante/destroy/{{$item->idEstudiante}}" method="POST">
+     
             {{-- boton para modificar --}}
-            <a class="btn btn-primary" href="/registro/curso/edit/{{$item->idCurso}}">Modificar</a>
+            <a class="btn btn-primary" href="/registro/estudiante/edit/{{$item->idEstudiante}}">Modificar</a>
             @csrf
             @method('DELETE')
             {{-- boton para eliminar --}}
-            <button type="button" class="btn btn-danger" onclick="confirmDelete({{ $item->idCurso }})">Eliminar</button>
+            <button type="button" class="btn btn-danger" onclick="confirmDelete({{ $item->idEstudiante }})">Eliminar</button>
             {{-- Agregamos sweetalert2 con CDN --}}
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
             <script>
-                function confirmDelete(cursoId) {
+                function confirmDelete(estudianteId) {
                     Swal.fire({
                         title: '¿Estás seguro?',
                         text: '¡No podrás revertir esto!',
@@ -62,7 +59,7 @@
                         if (result.isConfirmed) {
                             // Hacer una petición AJAX para eliminar el curso
                             $.ajax({
-                                url: '/registro/curso/destroy/' + cursoId,
+                                url: '/registro/estudiante/destroy/' + estudianteId,
                                 type: 'POST',
                                 data: {
                                     _token: '{{ csrf_token() }}',
@@ -76,7 +73,7 @@
                                         'success'
                                     ).then(() => {
                                         // Redireccionar a la página de visualización de cursos
-                                        window.location.href = '/registro/curso/show';
+                                        window.location.href = '/registro/estudiante/show';
                                     });
                                 },
                                 error: function(xhr) {
