@@ -114,31 +114,19 @@ class GrupoController extends Controller
 
     public function destroy($idGrupo)
     {
-        //return "Nice";  
         // Get idCurso a borrar
         $grupo = Grupo::find($idGrupo);
 
-        // return 1;
-        // //Deleting normalizacion
-
-        // $idCurso = Cursos_Grupos::join("cursos", "cursos_grupos.idCurso", "=", "cursos.idCurso")
-        //             ->join("grupos", "cursos_grupos.idGrupo", "=", "grupos.idGrupo")
-        //             ->where("grupos.idGrupo", "=", $idGrupo)
-        //             ->select("cursos.idCurso")
-        //             ->get();
-
-        // $id = $idCurso["idCurso"];
-                
-
+        //Para saber con que curso estamos trabajando
         $curso = Cursos_Grupos::where("idGrupo", $idGrupo)->first(); 
         $idCurso = $curso["idCurso"];
 
+        //Elimninar grupo y volver a los grupos de un curso determinado
         $data = Cursos_Grupos::where("idGrupo", $idGrupo)->delete(); 
-        // return 2;
+
         // //deleting Curso
         $grupo->delete();
 
-        // return 1;
         // return a json answer
         return redirect("registro/curso/grupo/show/$idCurso")->with('success', 'El grupo se ha Eliminado exitosamente.');
     }

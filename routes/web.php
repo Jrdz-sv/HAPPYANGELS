@@ -84,7 +84,9 @@ Route::delete('/registro/grupo/destroy/{id}', [App\Http\Controllers\GrupoControl
 // Route::get('/registro/grupo/deleteone/{id}', [App\Http\Controllers\GrupoController::class, 'destroy']);
 
 
+
 //Crud para agregar profesores a los grupos 
+
 
 
 //Crud para gestion de estudiantes
