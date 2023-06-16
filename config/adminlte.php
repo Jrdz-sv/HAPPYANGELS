@@ -380,6 +380,10 @@ return [
                     'text' => 'Grupos',
                     'url'  => 'registro/grupo',
                 ],
+                [
+                    'text' => 'Estudiantes',
+                    'url'  => 'registro/estudiante/show',
+                ],
             ],
         ],
         // Tags

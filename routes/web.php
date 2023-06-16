@@ -96,3 +96,35 @@ Route::get('/info/conocenos', [CursoController::class, 'conocenos']);
 // ---------------------------------------------------------------------------------------------------------------------
 // Route for grupos in registros
 // Route::get('/registro/grupo', [App\Http\Controllers\HomeController::class, 'grupo_registro'])->name('/registro/grupo');
+
+
+// Crud para grupos de cada curso en registro
+
+Route::get('/registro/curso/grupo/show/{idCurso}', [App\Http\Controllers\GrupoController::class, 'index']);
+Route::get('/registro/curso/grupo/create/{idCurso}', [App\Http\Controllers\GrupoController::class, 'create']);
+Route::post('/registro/curso/grupo/store', [App\Http\Controllers\GrupoController::class, 'store']);
+Route::get('/registro/grupo/edit/{grupo}', [App\Http\Controllers\GrupoController::class, 'edit']);
+Route::put('/registro/grupo/update/{grupo}', [App\Http\Controllers\GrupoController::class, 'update']);
+Route::delete('/registro/grupo/destroy/{id}', [App\Http\Controllers\GrupoController::class, 'destroy']);
+// Route::get('/registro/grupo/deleteone/{id}', [App\Http\Controllers\GrupoController::class, 'destroy']);
+
+
+
+//Crud para agregar profesores a los grupos 
+
+
+
+//Crud para gestion de estudiantes
+Route::get('/registro/estudiante/show', [App\Http\Controllers\EstudianteController::class, 'index']);
+Route::get('/registro/estudiante/create', [App\Http\Controllers\EstudianteController::class, 'create']);
+Route::post('/registro/estudiante/store', [App\Http\Controllers\EstudianteController::class, 'store']);
+Route::get('/registro/estudiante/edit/{estudiante}', [App\Http\Controllers\EstudianteController::class, 'edit']);
+Route::put('/registro/estudiante/update/{id}', [App\Http\Controllers\EstudianteController::class, 'update']);
+Route::delete('/registro/estudiante/destroy/{id}', [App\Http\Controllers\EstudianteController::class, 'destroy']);
+
+
+
+
+
+
+

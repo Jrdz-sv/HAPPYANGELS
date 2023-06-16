@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Curso;
+use App\Models\Cursos_Grupos;
 use Illuminate\Http\Request;
 
 class CursoController extends Controller
@@ -99,6 +100,11 @@ class CursoController extends Controller
      */
     public function destroy($idCurso)
     {
+
+        //ELIMINAR TODOS LOS GRUPOS DE ESTE CURSO ANTES DE SER ELIMINADO
+        // $prueba = Cursos_Grupos::all();
+        $prueba1 = Cursos_Grupos::where("idCurso", $idCurso)->delete(); 
+
         // Get idCurso a borrar
         $curso = Curso::find($idCurso);
 
