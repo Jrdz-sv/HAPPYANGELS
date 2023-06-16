@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\ProfesorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +65,30 @@ Route::put('/registro/curso/update/{curso}', [App\Http\Controllers\CursoControll
 
 // delete route
 Route::delete('/registro/curso/destroy/{id}', [App\Http\Controllers\CursoController::class, 'destroy']);
+
+
+
+// Route for crud profesores in registros
+
+// show route
+Route::get('/registro/profesor/show', [ProfesorController::class, 'index']);
+
+// create route
+Route::get('/registro/profesor/create', [App\Http\Controllers\ProfesorController::class, 'create']);
+
+// store route
+Route::post('/registro/profesor/store', [App\Http\Controllers\ProfesorController::class, 'store']);
+
+// edit route
+Route::get('/registro/profesor/edit/{profesor}', [App\Http\Controllers\ProfesorController::class, 'edit']);
+
+// update route
+Route::put('/registro/profesor/update/{profesor}', [App\Http\Controllers\ProfesorController::class, 'update']);
+
+// delete route
+Route::delete('/registro/profesor/destroy/{id}', [App\Http\Controllers\ProfesorController::class, 'destroy']);
+
+
 
 // show route
 Route::get('/info/conocenos', [CursoController::class, 'conocenos']);

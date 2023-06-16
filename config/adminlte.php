@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>HappyAngels</b>',
+    'logo' => '<b>Happy Angels</b>',
     'logo_img' => 'vendor/adminlte/dist/img/school.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -364,6 +364,10 @@ return [
             'text'    => 'Registros',
             'icon'    => 'fas fa-fw fa-file',
             'submenu' => [
+                [
+                    'text' => 'Profesores',
+                    'url'  => '/registro/profesor/show',
+                ],
                 [
                     'text' => 'Inscripción',
                     'url'  => 'registro/inscripcion',
