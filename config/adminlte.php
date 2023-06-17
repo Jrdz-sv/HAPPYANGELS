@@ -359,7 +359,7 @@ return [
                 ],
                 [
                     'text' => 'Inscripción',
-                    'url'  => 'registro/inscripcion',
+                    'url'  => '/registro/inscripcion/show',
                 ],
                 [
                     'text' => 'Cursos',

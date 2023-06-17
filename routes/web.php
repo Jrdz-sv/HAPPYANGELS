@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\ProfesorController;
+use App\Http\Controllers\InscripcionesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +42,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Route for inscripcion in registros
-// Route::get('/registro/curso/show', [App\Http\Controllers\CursoController::class, 'index']);
+
+// show route for inscripcion
+Route::get('/registro/inscripcion/show', [InscripcionesController::class, 'index']);
+
+// create route for inscripcion
+Route::get('/registro/inscripcion/create', [InscripcionesController::class, 'index']);
 
 
 // ---------------------------------------------------------------------------------------------------------------------
