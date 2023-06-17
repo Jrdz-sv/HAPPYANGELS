@@ -15,6 +15,14 @@ class EstudianteController extends Controller
         return view('registro/estudiante/show', compact('estudiantes'));
     }
 
+    public function indexprofesor_student(){
+
+        //Get all estudiantes
+        $estudiantes = Estudiante::all();
+
+        // Pass the estudiantes to the view
+        return view('profesor/estudiante', compact('estudiantes'));
+    }
 
     public function create()
     {   

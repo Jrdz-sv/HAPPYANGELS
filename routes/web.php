@@ -92,6 +92,7 @@ Route::delete('/registro/profesor/destroy/{id}', [App\Http\Controllers\ProfesorC
 
 // show route
 Route::get('/info/conocenos', [CursoController::class, 'conocenos']);
+Route::get('/info/cursos', [CursoController::class, 'cursos']);
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Route for grupos in registros
@@ -123,7 +124,17 @@ Route::put('/registro/estudiante/update/{id}', [App\Http\Controllers\EstudianteC
 Route::delete('/registro/estudiante/destroy/{id}', [App\Http\Controllers\EstudianteController::class, 'destroy']);
 
 
+// Show de los cursos-grupos para estudiante
+// show route
+Route::get('/estudiante/show', [CursoController::class, 'indexstudent']);
 
+// Show de los cursos-grupos para profesor
+// show route
+Route::get('/profesor/curso', [CursoController::class, 'indexprofesor']);
+
+// Show de los cursos-grupos para profesor
+// show route
+Route::get('/profesor/estudiante', [App\Http\Controllers\EstudianteController::class, 'indexprofesor_student']);
 
 
 

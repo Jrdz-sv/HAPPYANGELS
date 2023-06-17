@@ -16,6 +16,10 @@
 <a class="btn btn-success btn-lg" href="/registro/curso/grupo/create/{{$curso["idCurso"]}}">Agregar nuevo grupo</a>
 <br>
 <br>
+<!-- Nuevo botón de regresar -->
+<a class="btn btn-info btn-lg" href="/registro/curso/show">Regresar</a> 
+<br>
+<br>
 <table class="container table">
     {{-- Encabezados --}}
     <thead class="table-dark">

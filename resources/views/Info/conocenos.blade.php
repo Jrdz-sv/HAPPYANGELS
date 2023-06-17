@@ -1,39 +1,31 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/menu.css">
-    <title>Document</title>
-</head>
-<body>
-    <center><div><img src="https://s1.ppllstatics.com/hoy/www/multimedia/201812/17/media/cortadas/132253360--624x415.jpg" alt="" width="1400" height="300"></div><br>
+@extends('adminlte::page')
 
-    <div class="col-lg-5 col-md-6">
-        <div class="w-100 py-lg-5 py-3">
-            <h1 class="text-blue ft-Exo2-Bold">QUIENES SOMOS</h1>
-                <p class="text-justify">El Colegio happyangels fue fundado, en 1924, por tres grandes maestros salvadore&ntilde;os: Don Rub&eacute;n H. Dimas, Don Francisco Mor&aacute;n y Don Salvador Ca&ntilde;as, quienes introdujeron nuevos enfoques pedag&oacute;gicos como la ense&ntilde;anza laica y la coeducaci&oacute;n.</p>
-                <p class="text-justify">Los fundadores decidieron nombrar al Colegio en homenaje a Marcelino Garc&iacute;a Flamenco ya que admiraban el gran esp&iacute;ritu de este joven maestro joven maestro que propag&oacute; en su tiempo los principios de libertad, justicia, democracia y respeto.</p>
-                <p class="text-justify">Actualmente, vemos los frutos de una evoluci&oacute;n hist&oacute;rica institucional que ha sido pr&oacute;spera, llegando a ser uno de los colegios m&aacute;s importantes de El Salvador que ha formado a prestigiosos l&iacute;deres, acad&eacute;micos, pol&iacute;ticos, artistas y empresarios del pa&iacute;s, gracias a la clara definici&oacute;n y cumplimiento de su identidad, pensamiento pedag&oacute;gico y pol&iacute;tica de calidad.</p>
-    </div>
+@section('title', 'Cononocenos')
 
-    </center>
+@section('content_header')
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <center>
+    <h1 style="color: orange" class="text-center"><b>Quienes somos HapyAngels</b></h1>
+    <hr class="bg-white">
 
-    <section class="bg-cover-mision">
+    <div style="background-color: #117a8b" class="jumbotron welcome-banner">
         <div class="container">
-          <div class="row py-5">
-            <div class="col-md-6 py-3 border-right">
-      <h3 class="text-white text-center mb-3"><span class="border rounded px-3 py-1">Misi&oacute;n</span></h3>
-      <p class="text-white text-justify ft-MyriadPro-Regular">&ldquo;Educar l&iacute;deres de forma integral, laica y coeducativa, a partir de nuestros principios pedag&oacute;gicos curriculares, sobre la base de un modelo educativo propio y sustentado en valores, ciencia, tecnolog&iacute;a, innovaci&oacute;n y calidad&rdquo;.</p>
-      </div>
-      <div class="col-md-6 py-3">
-      <h3 class="text-white text-center mb-3"><span class="border rounded px-3 py-1">Visi&oacute;n</span></h3>
-      <p class="text-white text-justify ft-MyriadPro-Regular">&ldquo;Formar l&iacute;deres integrales con calidad humana comprometidos con la sociedad, como agentes de cambio positivo en su entorno.&rdquo;</p>
-      </div>
-    </center>
-</body>
-</html>
+
+          <h6>En "HappyAngels", somos un colegio comprometido con brindar una educación práctica y enriquecedora a niños y adolescentes. Nuestro objetivo es fomentar el crecimiento académico y personal de cada estudiante en un entorno estimulante y motivador.</h6>
+          <br>
+
+          <h6>Contamos con un equipo de docentes altamente calificados que se dedican a proporcionar cursos en diferentes áreas, permitiendo a los estudiantes aplicar sus conocimientos en actividades y proyectos prácticos. Nos enorgullece ayudar a los estudiantes a desarrollar habilidades prácticas y a establecer conexiones entre el aula y la vida diaria.
+            Además de nuestros cursos académicos, ofrecemos una amplia variedad de actividades extracurriculares, deportes y eventos especiales que contribuyen al desarrollo integral de nuestros estudiantes. Nos esforzamos por crear un ambiente inclusivo y acogedor, centrándonos en el bienestar emocional y social de nuestros alumnos.</h6>
+            <br>
+
+          <h6>En "HappyAngels", creemos en el potencial de cada estudiante y trabajamos para ayudarles a florecer y alcanzar su máximo potencial. Únete a nuestra comunidad y descubre una educación inspiradora y transformadora en "HappyAngels".</h6>
+        
+        </div>
+    </div>  
+
+@endsection
+
+@section('js')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+@endsection

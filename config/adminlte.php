@@ -153,7 +153,7 @@ return [
     'layout_fixed_sidebar' => true,
     'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
-    'layout_dark_mode' => null,
+    'layout_dark_mode' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -325,17 +325,10 @@ return [
             'url'  => '#',
             'icon' => 'fas fa-fw fa-user',
             'submenu' => [
-                [
-                    'text' => 'Tareas',
-                    'url'  => '#',
-                ],
-                [
-                    'text' => 'Notas',
-                    'url'  => '#',
-                ],
+
                 [
                     'text' => 'Curso',
-                    'url'  => 'estudiante/curso',
+                    'url'  => '/estudiante/show',
                 ],
             ]
         ],
@@ -352,11 +345,7 @@ return [
                 [
                     'text' => 'Cursos',
                     'url'  => 'profesor/curso',
-                ],
-                [
-                    'text' => 'Grupos',
-                    'url'  => 'profesor/grupo',
-                ],
+                ]
             ]
         ],
         // Dropdown Registro
@@ -376,14 +365,11 @@ return [
                     'text' => 'Cursos',
                     'url'  => '/registro/curso/show',
                 ],
-                [
-                    'text' => 'Grupos',
-                    'url'  => 'registro/grupo',
-                ],
+                
                 [
                     'text' => 'Estudiantes',
                     'url'  => 'registro/estudiante/show',
-                ],
+                ]
             ],
         ],
         // Tags
@@ -394,14 +380,14 @@ return [
             'url'        => '/info/conocenos',
         ],
         [
-            'text'       => 'warning',
+            'text'       => 'Cursos',
             'icon_color' => 'yellow',
-            'url'        => '#',
+            'url'        => '/info/cursos',
         ],
         [
-            'text'       => 'information',
+            'text'       => 'Contactanos',
             'icon_color' => 'cyan',
-            'url'        => '#',
+            'url'        => '/info/contact',
         ],
     ],
 

@@ -3,25 +3,101 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <div></div> <center><img src="https://www.amuaci.es/wp-content/uploads/2015/07/centro2-1060x450.jpg" alt="" width="1000" height="150"></center> 
-    
-    
-@stop
+    <link rel="stylesheet" href="vendor/adminlte/dist/css/adminlte.css">
 
-@section('content')
-<div class="w-100" class="col-md-6">
-    <center><h3 class="text-blue ft-Exo2-Bold text-uppercase">BIENVENIDOS</h3></center> 
-    <p class="text-justify" width="400" height="400">Nos complace poder ofrecerles un modelo educativo integral que potencia el aprendizaje de sus hijos e hijas y que los encamina a un futuro de liderazgo y oportunidades. La educaci&oacute;n impartida en el Colegio happyangels es la conjugaci&oacute;n de factores como: uso de la tecnolog&iacute;a, docentes calificados, ense&ntilde;anza de ingl&eacute;s, equipo tecnol&oacute;gico y ambientes educativos para el aprendizaje.</p>
-</div>
-<div class="row">
-    <div class="col-md-4"><img src="https://www.educaciontrespuntocero.com/wp-content/uploads/2020/10/destacada_E-978x652.jpg" alt="" width="350" height="300"><br><center>Computación y Diseño grafico</center></div>
-    <div class="col-md-4"><img src="https://www.65ymas.com/uploads/s1/36/47/48/aprender-ingles.jpeg" alt="" width="350" height="300"><br><center>Ingles</center></div> 
-    <div class="col-md-4"><img src="https://www.robotix.es/blog/wp-content/uploads/2015/04/45560_env_HS_SpinFac_B_01.jpg" alt="" width="350" height="300"><br><center>Robótica</center></div>
-</div>   
-@stop
+    <h1 style="color: orange" class="text-center"><b>Bienvenidos a HapyAngels</b></h1>
+    <hr class="bg-white">
 
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
+    <div class="jumbotron welcome-banner">
+        <div class="container">
+          <h5>Bienvenido al colegio "HappyAngels", donde brindamos una educación práctica y enriquecedora a niños y adolescentes. Con más de 600 estudiantes cada año, ofrecemos una amplia variedad de cursos en distintas áreas. Nuestro equipo de docentes altamente calificados se compromete a fomentar el crecimiento académico y personal de cada estudiante. Además, promovemos el aprendizaje práctico y ofrecemos actividades extracurriculares y eventos especiales. ¡Únete a nuestra comunidad y descubre tu potencial en "HappyAngels"!</h5>
+        </div>
+      </div>  
 
-<script src="{{ asset('js/custom.js') }}"></script>
+    <h3 style="color: yellow" class="text-center"><b>Cursos disponibles</b></h3><br>
+
+    <div class="card-group">
+        <div class="card custom-card">
+            <div class="card-header">
+                <h2 class="card-title"><b>Redes</b></h2>
+            </div>
+            <div class="card-body d-flex flex-column align-items-center">
+                <img src="vendor/adminlte/dist/img/network.png" class="card-img-top custom-image-size" alt="Cursos">
+                <div class="hover-info">
+                    <p>Puedes ver más acerca de nuestros cursos aquí.</p>
+                    <a href="#" class="btn btn-info">Más información</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card custom-card">
+            <div class="card-header">
+                <h2 class="card-title"><b>Ciberseguridad</b></h2>
+            </div>
+            <div class="card-body d-flex flex-column align-items-center">
+                <img src="vendor/adminlte/dist/img/security.png" class="card-img-top custom-image-size" alt="Cursos">
+                <div class="hover-info">
+                    <p>Puedes ver más acerca de nuestros cursos aquí.</p>
+                    <a href="#" class="btn btn-info">Más información</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card custom-card">
+            <div class="card-header">
+                <h2 class="card-title"><b>Mantenimiento</b></h2>
+            </div>
+            <div class="card-body d-flex flex-column align-items-center">
+                <img src="vendor/adminlte/dist/img/maintenance.png" class="card-img-top custom-image-size" alt="Cursos">
+                <div class="hover-info">
+                    <p>Puedes ver más acerca de nuestros cursos aquí.</p>
+                    <a href="#" class="btn btn-info">Más información</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card custom-card">
+            <div class="card-header">
+                <h2 class="card-title"><b>Desarrollo</b></h2>
+            </div>
+            <div class="card-body d-flex flex-column align-items-center">
+                <img src="vendor/adminlte/dist/img/development.png" class="card-img-top custom-image-size" alt="Cursos">
+                <div class="hover-info">
+                    <p>Puedes ver más acerca de nuestros cursos aquí.</p>
+                    <a href="#" class="btn btn-info">Más información</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card custom-card">
+            <div class="card-header">
+                <h2 class="card-title"><b>Inglés</b></h2>
+            </div>
+            <div class="card-body d-flex flex-column align-items-center">
+                <img src="vendor/adminlte/dist/img/eng.png" class="card-img-top custom-image-size" alt="Cursos">
+                <div class="hover-info">
+                    <p>Puedes ver más acerca de nuestros cursos aquí.</p>
+                    <a href="#" class="btn btn-info">Más información</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card custom-card">
+            <div class="card-header">
+                <h2 class="card-title"><b>Diseño</b></h2>
+            </div>
+            <div class="card-body d-flex flex-column align-items-center">
+                <img src="vendor/adminlte/dist/img/web-design.png" class="card-img-top custom-image-size" alt="Cursos">
+                <div class="hover-info">
+                    <p>Puedes ver más acerca de nuestros cursos aquí.</p>
+                    <a href="#" class="btn btn-info">Más información</a>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('js')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+@endsection

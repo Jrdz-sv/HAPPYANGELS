@@ -11,6 +11,7 @@ class CursoController extends Controller
     /**
      * Display a listing of the resource.
      */
+    // Show para registro/curso
     public function index()
     {
         // Retrieve all cursos from the database
@@ -20,6 +21,25 @@ class CursoController extends Controller
         return view('registro/curso/show', compact('cursos'));
     }
 
+    // Show para estuidante/curso
+    public function indexstudent()
+    {
+        // Retrieve all cursos from the database
+        $cursos = Curso::all();
+
+        // Pass the cursos to the view
+        return view('estudiante/show', compact('cursos'));
+    }
+
+    // Show para estuidante/curso
+    public function indexprofesor()
+    {
+        // Retrieve all cursos from the database
+        $cursos = Curso::all();
+
+        // Pass the cursos to the view
+        return view('profesor/curso', compact('cursos'));
+    }
     /**
      * Show the form for creating a new resource.
      */
@@ -120,6 +140,12 @@ class CursoController extends Controller
     {
         return view('info/conocenos');
     }
+
+    public function cursos()
+    {
+        return view('info/cursos');
+    }
+
 
 
 }

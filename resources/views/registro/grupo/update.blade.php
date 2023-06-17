@@ -47,7 +47,7 @@
             <div class="row justify-content-center text-center">
                 <div class="col-6">
                     <!-- Botón Regresar -->
-                    <a href="/registro/grupo/show" class="btn btn-danger btn-lg">Cancelar</a>
+                    <a href="/registro/curso/grupo/show/{{$grupo->idGrupo}}" class="btn btn-danger btn-lg">Cancelar</a>
                 </div>
                 <div class="col-6">
                     <!-- Guardar Button -->

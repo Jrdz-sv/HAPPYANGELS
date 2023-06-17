@@ -53010,3 +53010,51 @@ a.text-muted:hover {
   border-color: #4b545c !important;
 }
 /*# sourceMappingURL=adminlte.css.map */
+
+/* Custom CSS */
+
+/* Welcome message */
+.welcome-banner {
+  background-color: #117a8b;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Cards custome */
+.custom-card {
+  width: 15rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-group {
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  position: relative;
+}
+
+.hover-info {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(80, 80, 80, 0.5);
+  text-align: center;
+  text-shadow: 2px 2px 4px #000000;
+  color: white;
+  font-weight: bold;
+}
+
+.custom-card:hover .hover-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
