@@ -28,6 +28,12 @@ class InscripcionesController extends Controller
         $estudiantes = Estudiante::all();
         $cursos = Curso::all();
         $grupos = Grupo::all();
+        $grupos = Grupo::select(
+            "grupos.idGrupo", 
+            "grupos.codigo", 
+            "cursos_grupos.idCurso as idCurso", 
+        )->join("cursos_grupos" , "cursos_grupos.idGrupo", "=", "grupos.idGrupo")
+        ->get();
 
         $estudiantesOptions = $estudiantes->map(function ($estudiante) {
             return [
@@ -46,7 +52,8 @@ class InscripcionesController extends Controller
         $gruposOptions = $grupos->map(function ($grupo) {
             return [
                 'value' => $grupo->idGrupo,
-                'text' => $grupo->codigo
+                'text' => $grupo->codigo,
+                'name' => $grupo->idCurso
             ];
         });
 
@@ -69,13 +76,13 @@ class InscripcionesController extends Controller
         $inscripcion = new Inscripcion();
         $inscripcion->idEstudiante = $validatedData['estudiante'];
         $inscripcion->idCurso = $validatedData['curso'];
-        $inscripcion->idCurso = $validatedData['grupo'];
+        $inscripcion->idGrupo = $validatedData['grupo'];
     
         // Save the Inscripcion
         $inscripcion->save();
     
         // Redirect the user to a relevant page
-        return redirect()->route('registro/inscripcion/index')->with('success', 'Inscripción creada exitosamente.');
+        return redirect('/registro/inscripcion/show')->with('success', 'Inscripción creada exitosamente.');
     }
     
 
@@ -90,17 +97,69 @@ class InscripcionesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Inscripcion $inscripcion)
     {
-        //
+
+        $estudiantes = Estudiante::all();
+        $cursos = Curso::all();
+        $grupos = Grupo::all();
+        $grupos = Grupo::select(
+            "grupos.idGrupo", 
+            "grupos.codigo", 
+            "cursos_grupos.idCurso as idCurso", 
+        )->join("cursos_grupos" , "cursos_grupos.idGrupo", "=", "grupos.idGrupo")
+        ->get();
+
+        $estudiantesOptions = $estudiantes->map(function ($estudiante) {
+            return [
+                'value' => $estudiante->idEstudiante,
+                'text' => $estudiante->nombre . ' ' . $estudiante->apellido
+            ];
+        });
+
+        $cursosOptions = $cursos->map(function ($curso) {
+            return [
+                'value' => $curso->idCurso,
+                'text' => $curso->nombre
+            ];
+        });
+
+        $gruposOptions = $grupos->map(function ($grupo) {
+            return [
+                'value' => $grupo->idGrupo,
+                'text' => $grupo->codigo,
+                'name' => $grupo->idCurso
+            ];
+        });
+
+
+        return view("registro/inscripcion/update", compact('estudiantesOptions', 'cursosOptions', 'gruposOptions', 'inscripcion')); 
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Inscripcion $inscripcion)
     {
-        //
+         // validate fields
+         $data = request()->validate([
+            'curso'=>'required',
+            'grupo'=>'required',
+            'estudiante'=>'required'
+        ]);
+
+        // remplazar old data for new data
+        $inscripcion->idCurso = $data['curso'];
+        $inscripcion->idGrupo = $data['grupo'];
+        $inscripcion->idEstudiante = $data['estudiante'];
+        $inscripcion->updated_at = now();
+
+        //Save update
+        $inscripcion->save();
+
+        // Redirect data
+        return redirect('registro/inscripcion/show')->with('success', 'La inscripción se ha actualizado exitosamente.');
+   
     }
 
     /**
@@ -109,5 +168,9 @@ class InscripcionesController extends Controller
     public function destroy(string $id)
     {
         //
+        $inscripcion = Inscripcion::find($id);
+        $inscripcion->delete(); 
+        return redirect('registro/inscripcion/show')->with('success', 'La inscripción se ha eliminado exitosamente.');
+
     }
 }

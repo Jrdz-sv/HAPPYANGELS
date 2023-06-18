@@ -52,6 +52,15 @@ Route::get('/registro/inscripcion/create', [InscripcionesController::class, 'cre
 // store route for inscripcion
 Route::post('/registro/inscripcion/store', [InscripcionesController::class, 'store']);
 
+// edit route for inscripcion
+Route::get('/registro/inscripcion/edit/{inscripcion}', [App\Http\Controllers\InscripcionesController::class, 'edit']);
+
+// update route for inscripcion
+Route::put('/registro/inscripcion/update/{inscripcion}', [App\Http\Controllers\InscripcionesController::class, 'update']);
+
+// destroy route for inscripcion
+Route::delete('/registro/inscripcion/destroy/{id}', [App\Http\Controllers\InscripcionesController::class, 'destroy']);
+
 
 // ---------------------------------------------------------------------------------------------------------------------
 
