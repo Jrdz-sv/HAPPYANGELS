@@ -15,7 +15,7 @@ class InscripcionesController extends Controller
      */
     public function index()
     {
-        $inscripciones = Inscripcion::with('estudiante', 'curso', 'grupo')->get();
+        $inscripciones = Inscripcion::with('estudiante', 'curso', 'grupo')->get();        
     
         return view('registro/inscripcion/show', compact('inscripciones'));
     }            
@@ -26,6 +26,8 @@ class InscripcionesController extends Controller
     public function create()
     {
         $estudiantes = Estudiante::all();
+
+
         $cursos = Curso::all();
         $grupos = Grupo::all();
         $grupos = Grupo::select(
@@ -35,12 +37,30 @@ class InscripcionesController extends Controller
         )->join("cursos_grupos" , "cursos_grupos.idGrupo", "=", "grupos.idGrupo")
         ->get();
 
+        
+
         $estudiantesOptions = $estudiantes->map(function ($estudiante) {
             return [
                 'value' => $estudiante->idEstudiante,
                 'text' => $estudiante->nombre . ' ' . $estudiante->apellido
             ];
         });
+
+        //Solo estudiantes que no estan en curso
+
+        $inscripciones = Inscripcion::with('estudiante', 'curso', 'grupo')->get();
+        $yaCurso = []; 
+        foreach($inscripciones as $inc){
+            array_push($yaCurso, $inc->estudiante->idEstudiante);
+        }
+        $otrasOpciones = [];
+        foreach($estudiantesOptions as $opc){
+            if (!in_array($opc["value"], $yaCurso)){
+                //Devuelve objeto cuyo valor o ID no esta en el arreglo $yaCurso
+                array_push($otrasOpciones, $opc);
+            }
+        }
+        $estudiantesOptions = $otrasOpciones;
 
         $cursosOptions = $cursos->map(function ($curso) {
             return [

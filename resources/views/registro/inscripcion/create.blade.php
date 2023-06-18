@@ -50,8 +50,7 @@
                     <option value="">Seleccionar curso</option>
                     @foreach ($cursosOptions as $option)
                         <option value="{{ $option['value'] }}">{{ $option['text'] }}</option>
-                    @endforeach
-                </select>
+                    @endforeach                </select>
             </div>
 
             <div class="form-group">

@@ -5,7 +5,7 @@
 @section('content_header')
     <link rel="stylesheet" href="vendor/adminlte/dist/css/adminlte.css">
 
-    <h1 style="color: orange" class="text-center"><b>Bienvenidos a HapyAngels</b></h1>
+    <h1 style="color: orange" class="text-center"><b>Bienvenidos a HappyAngels</b></h1>
     <hr class="bg-white">
 
     <div class="jumbotron welcome-banner">
