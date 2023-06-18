@@ -1,17 +1,17 @@
 @extends('adminlte::page')
 
-@section('title', 'Grupo')
+@section('title', 'Profesor')
 
 @section('content_header')
-    {{-- <h1>Curso</h1> --}}
+    {{-- <h1>Profesor</h1> --}}
 @stop
 
 @section('content')
-<h1 class="text-center">Grupos de: {{$curso1[0][" "]}}</h1>
-<h5 class="text-center">Formulario para actualizar grupos</h5>
+<h1 class="text-center">Modificar</h1>
+<h5 class="text-center">Formulario para actualizar Profesores</h5>
 <hr>
 <div class="container">
-<form id="update-form" action="/registro/grupo/update/{{$grupo["idGrupo"]}}" method="POST">
+<form id="update-form" action="/registro/profesor/update/{{$profesor->idProfesor}}" method="POST">
     @csrf
     @method('PUT')
     <!-- Agrega SweetAlert2 CDN -->
@@ -19,11 +19,11 @@
 
     <div class="row justify-content-center">
         <div class="col-6">
-            <!-- Codigo -->
+            <!-- Nombre -->
             <div class="form-group">
                 <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" name="codigo" value="{{$grupo->codigo}}">
-                @error('codigo')
+                <input type="text" class="form-control" name="nombre" value="{{$profesor->nombre}}">
+                @error('nombre')
                 <span class="invalid-feedback d-block" role="alert">
                     <strong>{{$message}}</strong>
                 </span>
@@ -31,12 +31,11 @@
             </div>
         </div>
         <div class="col-6">
-            <!-- Cursantes -->
+            <!-- Apellido -->
             <div class="form-group">
-                <label for="codigo">Cursantes</label>
-                <input type="text" class="form-control" name="" value="{{$grupo->cursantes}}" disabled>
-                <input type="text" class="form-control" name="cursantes" value="{{$grupo->cursantes}}" hidden>
-                @error('cursantes')
+                <label for="apellido">Apellido</label>
+                <input type="text" class="form-control" name="apellido" value="{{$profesor->apellido}}">
+                @error('apellido')
                 <span class="invalid-feedback d-block" role="alert">
                     <strong>{{$message}}</strong>
                 </span>
@@ -47,7 +46,7 @@
             <div class="row justify-content-center text-center">
                 <div class="col-6">
                     <!-- Botón Regresar -->
-                    <a href="/registro/curso/grupo/show/{{$grupo->idGrupo}}" class="btn btn-danger btn-lg">Cancelar</a>
+                    <a href="/registro/profesor/show" class="btn btn-danger btn-lg">Cancelar</a>
                 </div>
                 <div class="col-6">
                     <!-- Guardar Button -->

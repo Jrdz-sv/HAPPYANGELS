@@ -369,6 +369,11 @@ return [
                 [
                     'text' => 'Estudiantes',
                     'url'  => 'registro/estudiante/show',
+                ],
+                
+                [
+                    'text' => 'Usuarios',
+                    'url'  => 'registro/user/show',
                 ]
             ],
         ],
