@@ -82,9 +82,15 @@ class GrupoController extends Controller
         //         ->select("cursos_grupos.idCurso")
         //         ->get();
 
-        $curso = Cursos_Grupos::where("idGrupo", $idGrupo)->first(); 
+        // $curso = Cursos_Grupos::where("idGrupo", $idGrupo)->first()->get(); 
+        $curso1 = Cursos_Grupos::select(
+            "cursos_grupos.idCurso", 
+            "cursos.codigo" 
+            )->join("cursos", "cursos.idCurso", "=", "cursos_grupos.idCurso")
+            ->where("cursos_grupos.idGrupo", "=", $idGrupo)
+            ->get(); 
         // show views
-        return view ('registro/grupo/update')->with(['grupo' => $grupo, 'curso' => $curso]);
+        return view ('registro/grupo/update')->with(['grupo' => $grupo, 'curso1' => $curso1]);
     }
 
     public function update(Request $request, Grupo $grupo)

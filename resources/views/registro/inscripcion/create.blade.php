@@ -6,6 +6,28 @@
     <h1>Crear Inscripción</h1>
 @stop
 
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+
+<script>
+    function displaying() {
+        var options = document.getElementsByClassName("grupo"); 
+        for(var x = 0; x < options.length; x++){
+            options[x].classList.add("hidden");
+        }
+
+      var selectElement = document.getElementById("curso");
+      var selectedValue = selectElement.value;
+      var elements = document.getElementsByName(selectedValue); 
+      for(var i = 0; i < elements.length; i++){
+        elements[i].classList.remove("hidden");
+      } 
+    }
+  </script>
+
 @section('content')
 <div class="card">
     <div class="card-body">
@@ -24,7 +46,7 @@
 
             <div class="form-group">
                 <label for="curso">Curso</label>
-                <select class="form-control" id="curso" name="curso">
+                <select class="form-control" id="curso" name="curso" onchange="displaying()">
                     <option value="">Seleccionar curso</option>
                     @foreach ($cursosOptions as $option)
                         <option value="{{ $option['value'] }}">{{ $option['text'] }}</option>
@@ -37,7 +59,7 @@
                 <select class="form-control" id="grupo" name="grupo">
                     <option value="">Seleccionar grupo</option>
                     @foreach ($gruposOptions as $option)
-                        <option value="{{ $option['value'] }}">{{ $option['text'] }}</option>
+                        <option value="{{ $option['value'] }}" name="{{$option['name']}}" class="grupo hidden">{{ $option['text'] }}</option>
                     @endforeach
                 </select>
             </div>
@@ -49,7 +71,7 @@
 @stop
 
 @section('js')
-<script>
+{{-- <script>
     $(document).ready(function () {
         // Obtener el valor seleccionado del estudiante
         $('#estudiante').on('change', function () {
@@ -94,5 +116,5 @@
             });
         });
     });
-</script>
+</script> --}}
 @endsection
