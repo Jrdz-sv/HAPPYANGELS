@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<h1 class="text-center">Grupos de: {{$curso["codigo"]}}</h1>
+<h1 class="text-center">Grupos de: {{$curso1[0][" "]}}</h1>
 <h5 class="text-center">Formulario para actualizar grupos</h5>
 <hr>
 <div class="container">
