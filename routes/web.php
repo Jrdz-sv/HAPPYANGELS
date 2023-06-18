@@ -145,6 +145,8 @@ Route::get('/profesor/curso', [CursoController::class, 'indexprofesor']);
 // show route
 Route::get('/profesor/estudiante', [App\Http\Controllers\EstudianteController::class, 'indexprofesor_student']);
 
+// Reportes
+Route::get('registro/reports/estudiantesPorGrupo/{idGrupo}', [ReportsController::class, 'estudiantesPorGrupo']);
 
 
 
