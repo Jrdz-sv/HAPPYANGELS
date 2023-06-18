@@ -25,7 +25,7 @@
                 <img src="vendor/adminlte/dist/img/network.png" class="card-img-top custom-image-size" alt="Cursos">
                 <div class="hover-info">
                     <p>Puedes ver más acerca de nuestros cursos aquí.</p>
-                    {{-- Aqui esta la ruta Mario --}}
+            
                     <a href="/info/cursos" class="btn btn-info">Más información</a>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                 <img src="vendor/adminlte/dist/img/security.png" class="card-img-top custom-image-size" alt="Cursos">
                 <div class="hover-info">
                     <p>Puedes ver más acerca de nuestros cursos aquí.</p>
-                    <a href="#" class="btn btn-info">Más información</a>
+                    <a href="/info/cursos" class="btn btn-info">Más información</a>
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
                 <img src="vendor/adminlte/dist/img/maintenance.png" class="card-img-top custom-image-size" alt="Cursos">
                 <div class="hover-info">
                     <p>Puedes ver más acerca de nuestros cursos aquí.</p>
-                    <a href="#" class="btn btn-info">Más información</a>
+                    <a href="/info/cursos" class="btn btn-info">Más información</a>
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@
                 <img src="vendor/adminlte/dist/img/development.png" class="card-img-top custom-image-size" alt="Cursos">
                 <div class="hover-info">
                     <p>Puedes ver más acerca de nuestros cursos aquí.</p>
-                    <a href="#" class="btn btn-info">Más información</a>
+                    <a href="/info/cursos" class="btn btn-info">Más información</a>
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
                 <img src="vendor/adminlte/dist/img/eng.png" class="card-img-top custom-image-size" alt="Cursos">
                 <div class="hover-info">
                     <p>Puedes ver más acerca de nuestros cursos aquí.</p>
-                    <a href="#" class="btn btn-info">Más información</a>
+                    <a href="/info/cursos" class="btn btn-info">Más información</a>
                 </div>
             </div>
         </div>
@@ -91,7 +91,7 @@
                 <img src="vendor/adminlte/dist/img/web-design.png" class="card-img-top custom-image-size" alt="Cursos">
                 <div class="hover-info">
                     <p>Puedes ver más acerca de nuestros cursos aquí.</p>
-                    <a href="#" class="btn btn-info">Más información</a>
+                    <a href="/info/cursos" class="btn btn-info">Más información</a>
                 </div>
             </div>
         </div>
