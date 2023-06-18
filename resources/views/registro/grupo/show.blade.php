@@ -39,7 +39,8 @@
         <form action="/registro/curso/destroy/{{$item->idGrupo}}" method="POST">
 
             {{-- boton para administrar grupos --}}
-            
+            <a class="btn btn-secondary" href="/registro/curso/grupo/profesor/show/idGrupo">Profesor</a>  
+
             {{-- boton para modificar --}}
             <a class="btn btn-primary" href="/registro/grupo/edit/{{$item->idGrupo}}">Modificar</a>
             @csrf
