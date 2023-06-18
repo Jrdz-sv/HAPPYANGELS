@@ -47,7 +47,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/registro/inscripcion/show', [InscripcionesController::class, 'index']);
 
 // create route for inscripcion
-Route::get('/registro/inscripcion/create', [InscripcionesController::class, 'index']);
+Route::get('/registro/inscripcion/create', [InscripcionesController::class, 'create']);
+
+// store route for inscripcion
+Route::post('/registro/inscripcion/store', [InscripcionesController::class, 'store']);
 
 
 // ---------------------------------------------------------------------------------------------------------------------

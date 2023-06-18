@@ -12,15 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('inscripciones', function (Blueprint $table) {
-            $table->id("idInscripcion");
-            $table->bigInteger("idGrupo")->unsigned(); 
-            $table->bigInteger("idEstudiante")->unsigned();
-            $table->foreign("idGrupo")->references("idGrupo")->on("grupos");
-            $table->foreign("idEstudiante")->references("idEstudiante")->on("estudiantes");   
-
+            $table->id('idInscripcion');
+            $table->unsignedBigInteger('idGrupo');
+            $table->unsignedBigInteger('idEstudiante');
+            $table->unsignedBigInteger('idCurso'); // Add the foreign key column for curso
+        
+            $table->foreign('idGrupo')->references('idGrupo')->on('grupos');
+            $table->foreign('idEstudiante')->references('idEstudiante')->on('estudiantes');
+            $table->foreign('idCurso')->references('idCurso')->on('cursos'); // Define the foreign key constraint for curso
+        
             $table->timestamps();
         });
-    }
+    }    
 
     /**
      * Reverse the migrations.

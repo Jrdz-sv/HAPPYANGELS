@@ -25,7 +25,8 @@
                 <img src="vendor/adminlte/dist/img/network.png" class="card-img-top custom-image-size" alt="Cursos">
                 <div class="hover-info">
                     <p>Puedes ver más acerca de nuestros cursos aquí.</p>
-                    <a href="#" class="btn btn-info">Más información</a>
+                    {{-- Aqui esta la ruta Mario --}}
+                    <a href="/info/cursos" class="btn btn-info">Más información</a>
                 </div>
             </div>
         </div>

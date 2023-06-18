@@ -9,15 +9,15 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <form action="{{ route('registro/inscripcion/store') }}" method="POST">
+        <form action="/registro/inscripcion/store" method="POST">
             @csrf
 
             <div class="form-group">
                 <label for="estudiante">Estudiante</label>
                 <select class="form-control" id="estudiante" name="estudiante">
                     <option value="">Seleccionar estudiante</option>
-                    @foreach ($estudiantes as $estudiante)
-                        <option value="{{ $estudiante->id }}">{{ $estudiante->nombre }}</option>
+                    @foreach ($estudiantesOptions as $option)
+                        <option value="{{ $option['value'] }}">{{ $option['text'] }}</option>
                     @endforeach
                 </select>
             </div>
@@ -26,6 +26,9 @@
                 <label for="curso">Curso</label>
                 <select class="form-control" id="curso" name="curso">
                     <option value="">Seleccionar curso</option>
+                    @foreach ($cursosOptions as $option)
+                        <option value="{{ $option['value'] }}">{{ $option['text'] }}</option>
+                    @endforeach
                 </select>
             </div>
 
@@ -33,6 +36,9 @@
                 <label for="grupo">Grupo</label>
                 <select class="form-control" id="grupo" name="grupo">
                     <option value="">Seleccionar grupo</option>
+                    @foreach ($gruposOptions as $option)
+                        <option value="{{ $option['value'] }}">{{ $option['text'] }}</option>
+                    @endforeach
                 </select>
             </div>
 
@@ -51,7 +57,7 @@
 
             // Hacer una solicitud AJAX para obtener los cursos del estudiante seleccionado
             $.ajax({
-                url: '/obtener-cursos/' + estudianteId,
+                url: '/registro/cursos/' + estudianteId,
                 type: 'GET',
                 success: function (response) {
                     // Limpiar el select de cursos
@@ -74,7 +80,7 @@
 
             // Hacer una solicitud AJAX para obtener los grupos del curso seleccionado
             $.ajax({
-                url: '/obtener-grupos/' + cursoId,
+                url: '/registro/grupos/' + cursoId,
                 type: 'GET',
                 success: function (response) {
                     // Limpiar el select de grupos

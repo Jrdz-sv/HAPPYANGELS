@@ -13,13 +13,12 @@ class InscripcionSeeder extends Seeder
      */
     public function run(): void
     {
-        //
         $data = [
-            ["idGrupo" => 1, "idEstudiante" => 1], 
-            ["idGrupo" => 2, "idEstudiante" => 2], 
-            ["idGrupo" => 3, "idEstudiante" => 3]
-        ]; 
-
+            ["idGrupo" => 1, "idEstudiante" => 1, "idCurso" => 1],
+            ["idGrupo" => 2, "idEstudiante" => 2, "idCurso" => 2],
+            ["idGrupo" => 3, "idEstudiante" => 3, "idCurso" => 3]
+        ];
+    
         DB::table("inscripciones")->insert($data);
     }
 }

@@ -15,12 +15,10 @@ class InscripcionesController extends Controller
      */
     public function index()
     {
-        // Retrieve all cursos from the database
-        $inscrip = Inscripcion::all();
-
-        // Pass the cursos to the view
-        return view('registro/inscripcion/show', compact('inscrip'));
-    }
+        $inscripciones = Inscripcion::with('estudiante', 'curso', 'grupo')->get();
+    
+        return view('registro/inscripcion/show', compact('inscripciones'));
+    }            
 
     /**
      * Show the form for creating a new resource.
@@ -52,7 +50,7 @@ class InscripcionesController extends Controller
             ];
         });
 
-        return view('inscripciones.create', compact('estudiantesOptions', 'cursosOptions', 'gruposOptions'));
+        return view('registro/inscripcion/create', compact('estudiantesOptions', 'cursosOptions', 'gruposOptions'));
     }
 
     /**
@@ -60,23 +58,26 @@ class InscripcionesController extends Controller
      */
     public function store(Request $request)
     {
-        // Validar los datos del formulario
-        $request->validate([
+        // Validate the incoming request data
+        $validatedData = $request->validate([
             'estudiante' => 'required',
             'curso' => 'required',
             'grupo' => 'required',
         ]);
-
-        // Crear una nueva inscripción
+    
+        // Create a new Inscripcion instance
         $inscripcion = new Inscripcion();
-        $inscripcion->estudiante = $request->estudiante;
-        $inscripcion->curso = $request->curso;
-        $inscripcion->grupo = $request->grupo;
+        $inscripcion->idEstudiante = $validatedData['estudiante'];
+        $inscripcion->idCurso = $validatedData['curso'];
+        $inscripcion->idCurso = $validatedData['grupo'];
+    
+        // Save the Inscripcion
         $inscripcion->save();
-
-        // Redireccionar a una página de éxito o mostrar un mensaje de éxito
-        return redirect()->route('registro/inscripcion/index')->with('success', 'La inscripción se ha realizado exitosamente.');
+    
+        // Redirect the user to a relevant page
+        return redirect()->route('registro/inscripcion/index')->with('success', 'Inscripción creada exitosamente.');
     }
+    
 
     /**
      * Display the specified resource.

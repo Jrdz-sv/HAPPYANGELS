@@ -18,10 +18,12 @@
     </thead>
     <tbody>
       <tr>
-        <td>Redes</td>
+        {{-- Aqui Mario no se pierda --}}
+        <td>Aqui</td>
       </tr>
     </tbody>
 </table>
+
 <table class="table">
     <thead class="table-info">
       <tr>
@@ -34,6 +36,7 @@
       </tr>
     </tbody>
 </table>
+
 <table class="table">
     <thead class="table-success">
       <tr>
@@ -46,6 +49,7 @@
       </tr>
     </tbody>
 </table>
+
 <table class="table">
     <thead class="table-warning">
       <tr>
@@ -58,6 +62,7 @@
       </tr>
     </tbody>
 </table>
+
 <table class="table">
     <thead class="table-primary">
       <tr>
@@ -70,6 +75,7 @@
       </tr>
     </tbody>
 </table>
+
 <table class="table">
     <thead class="table-dark">
       <tr>
