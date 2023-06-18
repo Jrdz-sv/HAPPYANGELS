@@ -97,6 +97,8 @@ class InscripcionesController extends Controller
         $inscripcion->idEstudiante = $validatedData['estudiante'];
         $inscripcion->idCurso = $validatedData['curso'];
         $inscripcion->idGrupo = $validatedData['grupo'];
+
+        
     
         // Save the Inscripcion
         $inscripcion->save();

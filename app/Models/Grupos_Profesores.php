@@ -12,5 +12,5 @@ class Grupos_Profesores extends Model
 
     protected $primaryKey = "idGrupos_Profesores"; 
 
-    protected $filalble = ["idGrupo", "idProfesor"]; 
+    protected $fillable = ["idGrupo", "idProfesor"]; 
 }

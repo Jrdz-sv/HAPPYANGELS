@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Curso;
-use App\Models\Cursos_Grupos;
 use App\Models\Grupo;
+use App\Models\Profesor;
 use Illuminate\Http\Request;
+use App\Models\Cursos_Grupos;
+use App\Models\Grupos_Profesores;
 
 class GrupoController extends Controller
 {
@@ -137,5 +139,58 @@ class GrupoController extends Controller
         return redirect("registro/curso/grupo/show/$idCurso")->with('success', 'El grupo se ha Eliminado exitosamente.');
     }
 
+
+    public function createGrupoProfesor($idGrupo){
+        $grupo = Grupo::find($idGrupo);
+
+        $profesores = Profesor::all(); 
+        //mandar solo profesores disponibles
+        $profesoresYaOcupados = Grupos_Profesores::select("idGrupo", "idProfesor")->get();
+        
+        $profesoresDisponibles = []; 
+
+        foreach($profesores as $profe){
+            $flag = false;
+            foreach($profesoresYaOcupados as $ya){
+                if($profe["idProfesor"] == $ya["idProfesor"]){
+                    $flag = true;
+                }
+            }
+
+            if(!$flag){
+                array_push($profesoresDisponibles, $profe);
+            }
+        }
+
+
+
+        // return $profesoresYaOcupados;
+        return view("/registro/grupo_profesor/show")->with(["profesores" => $profesoresDisponibles, "grupo" => $grupo]);
+
+    }
+
+    public function storeGrupoProfesor(Request $request)
+    {
+        // validate fields
+        $data = request()->validate([
+            'idGrupo'=>'required', 
+            'idProfesor'=>'required', 
+        ]); 
+
+        // Insert information
+        $res = Grupos_Profesores::create($data);
+
+        $idGrupo = $data["idGrupo"];
+        $curso = Cursos_Grupos::select("idCurso")->where("idGrupo", "=", $idGrupo)->get();
+        $idCurso = $curso["idCurso"];
+
+        // Redirect information(when not using view we have to use redirct for saving data)
+        // return redirect("/registro/grupo_profesor/show/$idGrupo");
+        return redirect("/registro/curso/grupo/show/$idCurso");
+    }
+
+    public function destroyGrupoProfesor(){
+        
+    }
 
 }

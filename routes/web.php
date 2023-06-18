@@ -126,11 +126,12 @@ Route::post('/registro/curso/grupo/store', [App\Http\Controllers\GrupoController
 Route::get('/registro/grupo/edit/{grupo}', [App\Http\Controllers\GrupoController::class, 'edit']);
 Route::put('/registro/grupo/update/{grupo}', [App\Http\Controllers\GrupoController::class, 'update']);
 Route::delete('/registro/grupo/destroy/{id}', [App\Http\Controllers\GrupoController::class, 'destroy']);
-// Route::get('/registro/grupo/deleteone/{id}', [App\Http\Controllers\GrupoController::class, 'destroy']);
-
 
 
 //Crud para agregar profesores a los grupos 
+Route::get('/registro/grupo_profesor/show/{idGrupo}', [App\Http\Controllers\GrupoController::class, 'createGrupoProfesor']);
+Route::post('/registro/grupo_profesor/store', [App\Http\Controllers\GrupoController::class, 'storeGrupoProfesor']);
+
 
 
 
