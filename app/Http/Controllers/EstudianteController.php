@@ -75,14 +75,15 @@ class EstudianteController extends Controller
 
     public function destroy($idEstudiante)
     {
-        // Get idCurso a borrar
+        // Find the Estudiante to delete
         $estudiante = Estudiante::find($idEstudiante);
-
-        //deleting Curso
+    
+        // Delete the related Inscripcion(s)
+        $estudiante->inscripciones()->delete();
+    
+        // Delete the Estudiante
         $estudiante->delete();
-
-        // return a json answer
+    
         return redirect('registro/estudiante/show')->with('success', 'El estudiante se ha eliminado exitosamente.');
-    }
-
+    }    
 }
